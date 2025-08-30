@@ -1,0 +1,27 @@
+import math
+#define the functio
+def SmallestMultiple(number):
+
+#assign the variables with limit=number and factors being empty list, rest intialized to zero
+    limit,factors,factorial,count=number,[],0,0
+    
+#since factorial of a number is the highest multiple of the given upper limit of numbers     
+    factorial=math.factorial(limit)
+    
+#reverse loop starts from factorial and decrements the limit
+    for i in range(factorial,limit,-1):
+        
+#loop until the number limit
+        for j in range(1,limit+1):
+            
+#check if the number is divisible by all the numbers until limit an increment count by one 
+            if i%j==0: count+=1
+                
+#if the count of factors = limit of numbers append the multiple in factors list
+        if count==limit: factors.append(i)
+            
+#reset count to 0 for next loop
+        count=0
+        
+#return the minimum value from the factors list
+    return min(factors)
