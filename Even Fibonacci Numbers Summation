@@ -1,0 +1,10 @@
+def fiboEvenSum(n):
+    a,b,c,fibo,sum=0,1,0,[0],0
+    for i in range(n):
+        c=a+b
+        a=b
+        b=c
+        fibo.append(c)
+    for f in fibo:
+        if f%2==0 and f<=n: sum=sum+f
+    return sum#,fibo
