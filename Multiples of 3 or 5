@@ -1,0 +1,5 @@
+def multiples_3_5(number):
+    sum=0 #intialize sum=0
+    for i in range(0,number): #loop until limit number-1
+        if i%3==0 or i%5==0: sum=sum+i #condition to check if a number is multiple of 3 or 5 and cummulate the sum
+    return sum #return the summation
