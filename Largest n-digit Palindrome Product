@@ -1,0 +1,20 @@
+def LargestPalindromeProduct(number):
+#assinging the variables used in the below code
+    count,digits,palindrome_string,palindrome_list=0,number,"",[0]
+
+#loop to calculate the n-digits products
+    for i in range(10*(number-1),10**number):
+        for j in range(i,10**number):
+            
+#calculate the prodcut of the n-digits and save it as string for palindrome check in next step
+            palindrome_string=palindrome_string+str(i*j)
+            
+#check if the number is a palindrome by comapring it with its reverse string
+            if palindrome_string==palindrome_string[::-1]: palindrome_list.append(i*j)
+                
+#reset the palindrome_string to empty for next loop
+            
+            palindrome_string=""
+            
+#return the max number in the palindrome_list
+    return max(palindrome_list)
