@@ -1,0 +1,6 @@
+def SumSquareDifference(number):
+    sum_sqaures,summation=0,0            #intialize the variables to zero
+    for i in range(number+1):            #loop until given number limit
+        sum_sqaures=sum_sqaures+i**2;    #cumulative summning each sqaured number
+        summation=summation+i;           #cumulative summation of each number 
+    return abs(sum_sqaures-summation**2) #return the absolute value of sum_sqaures and summation
