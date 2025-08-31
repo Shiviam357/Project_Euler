@@ -1,0 +1,9 @@
+def PrimeFactors(number):
+    maximus_prime,prime_factors,prime_numbers,factors,factors_count=0,[0],[2],[0],0
+    for i in range(3,number+2,2):          #only odd numbers are prime besides 3 so run loop from 3 at a step of 2...odd series
+        for j in range(2,i+1,1):           #prime numbers are either divisible by 1 (excluded here) or themselves so prime factors count always=1
+            if (i%j==0): factors_count+=1  #count the number of factors
+        if factors_count==1:               #check for factors count
+            prime_numbers.append(i)        #append only the prime numbers list
+        factors_count=0                    #reset the factors count for next loop
+    return prime_numbers                   #return entire list of prime numbers until number limit 
